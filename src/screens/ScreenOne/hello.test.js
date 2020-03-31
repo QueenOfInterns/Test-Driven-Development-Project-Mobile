@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-native-testing-library';
-import Hello from '../Hello.js';
+import Hello from './ScreenOne/hello.js';
 
 describe('Hello', () => {
   it('renders the correct message', () => {

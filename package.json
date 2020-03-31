@@ -10,16 +10,17 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "pods": "^2.0.0",
     "@react-native-community/masked-view": "^0.1.7",
     "@react-navigation/bottom-tabs": "^5.2.5",
     "@react-navigation/native": "^5.1.4",
+    "pods": "^2.0.0",
     "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.7.1",
     "react-native-safe-area-context": "^0.7.3",
-    "react-native-screens": "^2.4.0"
+    "react-native-screens": "^2.4.0",
+    "react-native-testing-library": "^1.13.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
