@@ -10,13 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-<<<<<<< HEAD
     "pods": "^2.0.0",
-=======
-    "@react-native-community/masked-view": "^0.1.7",
-    "@react-navigation/bottom-tabs": "^5.2.5",
-    "@react-navigation/native": "^5.1.4",
->>>>>>> 218ee0bd95ef5330e7a03bb69990505863a30f66
+
     "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-gesture-handler": "^1.6.1",
