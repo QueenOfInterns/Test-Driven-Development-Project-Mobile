@@ -5,7 +5,7 @@ export class ScreenOne extends Component {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text>Screen Two</Text>
+                <Text>Screen One</Text>
             </View>
         );
     }
