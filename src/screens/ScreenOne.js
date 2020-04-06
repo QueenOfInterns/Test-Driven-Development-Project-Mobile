@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
@@ -8,7 +9,15 @@ export class ScreenOne extends Component {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>Screen One</Text>
-        <Hello />
+        <Text> Write the code for this test case: </Text>
+        <Text>
+          ' describe('Hello', () =>{' '}
+          {it('renders the correct message', () => {
+            const {queryByText} = render(<Hello />);
+            expect(queryByText('Hello, world!')).not.toBeNull();
+          })}
+          ); '
+        </Text>
       </View>
     );
   }
