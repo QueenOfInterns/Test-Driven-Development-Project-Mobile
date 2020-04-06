@@ -6,8 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "jest --json --outputFile=output.json",
+    "checkTest": "node checkTest.js",
+    "lint": "eslint .",
+    "pods": "cd ios && pod _1.6.1_ install || echo \"Dependency issues with `npm run pods`? Try `npm run pods-update`\""
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
