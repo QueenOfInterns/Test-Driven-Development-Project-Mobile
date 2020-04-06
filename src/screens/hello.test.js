@@ -1,7 +1,6 @@
 import React from 'react';
-import ScreenOne from './ScreenOne.js';
-
 import renderer from 'react-test-renderer';
+import ScreenOne from './ScreenOne.js';
 
 test('renders correctly', () => {
   const tree = renderer.create(<ScreenOne />).toJSON();
