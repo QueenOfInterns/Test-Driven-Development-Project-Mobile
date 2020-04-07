@@ -1,8 +1,15 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import ScreenOne from './ScreenOne.js';
 
-test('renders correctly', () => {
-  const tree = renderer.create(<ScreenOne />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe('Hello World Screen', () => {
+  describe('The code for the test', () => {
+    it('renders correctly', () => {
+      const renderer = new ShallowRenderer();
+      renderer.render(<ScreenOne />);
+      expect(renderer.getRenderOutput()).toMatchSnapshot();
+    });
+  });
 });
