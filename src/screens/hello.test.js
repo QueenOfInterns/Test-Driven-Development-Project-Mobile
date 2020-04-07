@@ -5,7 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import ScreenOne from './ScreenOne.js';
 
 describe('Hello World Screen', () => {
-  describe('The code for the test', () => {
+  describe('View with Text', () => {
     it('renders correctly', () => {
       const renderer = new ShallowRenderer();
       renderer.render(<ScreenOne />);
