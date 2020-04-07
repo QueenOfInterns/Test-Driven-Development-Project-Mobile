@@ -6,6 +6,13 @@ import {ScreenFour} from './src/screens/ScreenFour';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
+function screenPass(screen) {
+  const fs = require('fs');
+  let data = fs.readFileSync('./output/output' + screen + '.json');
+  let output = JSON.parse(data);
+  return output.testResults[0].status === 'failed';
+}
+
 const TabNavigator = createBottomTabNavigator(
   {
     First: {
