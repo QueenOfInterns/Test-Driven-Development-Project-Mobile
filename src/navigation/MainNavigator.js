@@ -1,9 +1,10 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ScreenOne} from '../screens/ScreenOne';
 import {ScreenTwo} from '../screens/ScreenTwo';
 import {ScreenThree} from '../screens/ScreenThree';
 import {ScreenFour} from '../screens/ScreenFour';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -21,16 +22,20 @@ const TabNavigator = createBottomTabNavigator(
     },
   },
   {
-    tabBarOnPress: ({navigation, defaultHandler}) => {
-      if (
-        navigation.routeName === 'Second' ||
-        navigation.routeName === 'Third'
-      ) {
-        return null;
-      }
-      defaultHandler();
-    },
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarOnPress: ({navigation, defaultHandler}) => {
+        if (
+          navigation.state.routeName === 'Second' ||
+          navigation.state.routeName === 'Third'
+        ) {
+          return null;
+        }
+        defaultHandler();
+      },
+    }),
   },
 );
 
-export default TabNavigator;
+const AppContainer = createAppContainer(TabNavigator);
+
+export default AppContainer
