@@ -5,11 +5,9 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import ScreenOne from './ScreenOne.js';
 
 describe('Hello World Screen', () => {
-  describe('View with Text', () => {
-    it('renders correctly', () => {
-      const renderer = new ShallowRenderer();
-      renderer.render(<ScreenOne />);
-      expect(renderer.getRenderOutput()).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<ScreenOne />);
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });
