@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hello World Screen Hello World Code renders correctly 1`] = `
+exports[`Hello World Screen renders correctly 1`] = `
 <View
   style={
     Object {
