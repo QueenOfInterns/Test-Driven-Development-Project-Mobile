@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScreenOne} from '../screens/ScreenOne';
+import ScreenOne from '../screens/ScreenOne';
 import {ScreenTwo} from '../screens/ScreenTwo';
 import {ScreenThree} from '../screens/ScreenThree';
 import {ScreenFour} from '../screens/ScreenFour';

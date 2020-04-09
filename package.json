@@ -20,7 +20,9 @@
     "react-native-screens": "^2.4.0",
     "react-native-testing-library": "^1.13.0",
     "react-navigation": "^4.3.7",
-    "react-navigation-tabs": "^2.8.11"
+    "react-navigation-tabs": "^2.8.11",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
