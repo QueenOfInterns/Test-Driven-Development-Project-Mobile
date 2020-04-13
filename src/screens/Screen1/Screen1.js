@@ -2,14 +2,12 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 
-class ScreenOne extends Component {
+class Screen1 extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -20,4 +18,4 @@ class ScreenOne extends Component {
   }
 }
 
-export default ScreenOne;
+export default Screen1;

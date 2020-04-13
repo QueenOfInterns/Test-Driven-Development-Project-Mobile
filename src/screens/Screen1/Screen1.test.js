@@ -1,13 +1,11 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import ScreenOne from './ScreenOne.js';
+import Screen1 from './Screen1.js';
 
 describe('Hello World Screen', () => {
   it('renders correctly', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<ScreenOne />);
+    renderer.render(<Screen1 />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });
