@@ -1,21 +1,41 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { ScreenOne } from '../screens/ScreenOne';
-import { ScreenTwo } from '../screens/ScreenTwo';
-import { ScreenThree } from '../screens/ScreenThree';
-import { ScreenFour } from '../screens/ScreenFour';
+import ScreenOne from '../screens/ScreenOne';
+import {ScreenTwo} from '../screens/ScreenTwo';
+import {ScreenThree} from '../screens/ScreenThree';
+import {ScreenFour} from '../screens/ScreenFour';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
-const Tab = createBottomTabNavigator();
+const TabNavigator = createBottomTabNavigator(
+  {
+    First: {
+      screen: ScreenOne,
+    },
+    Second: {
+      screen: ScreenTwo,
+    },
+    Third: {
+      screen: ScreenThree,
+    },
+    Fourth: {
+      screen: ScreenFour,
+    },
+  },
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarOnPress: ({navigation, defaultHandler}) => {
+        if (
+          navigation.state.routeName === 'Second' ||
+          navigation.state.routeName === 'Third'
+        ) {
+          return null;
+        }
+        defaultHandler();
+      },
+    }),
+  },
+);
 
-function MainNav() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="one" component={ScreenOne} />
-      <Tab.Screen name="two" component={ScreenTwo} />
-      <Tab.Screen name="three" component={ScreenThree} />
-      <Tab.Screen name="four" component={ScreenFour} />
-    </Tab.Navigator>
-  );
-}
+const AppContainer = createAppContainer(TabNavigator);
 
-export default MainNav;
+export default AppContainer

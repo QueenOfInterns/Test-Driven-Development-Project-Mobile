@@ -1,0 +1,1 @@
+export const INCREMENT_ONE = 'increment_one';
