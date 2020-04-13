@@ -1,8 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {connect} from 'react-redux';
-import {addOne} from '../state/actions/addOne';
 
 class ScreenOne extends Component {
   constructor(props) {
@@ -10,7 +8,7 @@ class ScreenOne extends Component {
   }
 
   componentDidMount() {
-    console.log('count', this.props.counter);
+
   }
 
   render() {
@@ -22,17 +20,4 @@ class ScreenOne extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    counter: state.testReducer.counter,
-  };
-};
-
-const mapDispatchToProps = {
-  Increment: addOne,
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ScreenOne);
+export default ScreenOne;
