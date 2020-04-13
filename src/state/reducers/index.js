@@ -1,8 +1,8 @@
-import { combineReducers, createStore } from 'redux';
+import {combineReducers, createStore} from 'redux';
 import testReducer from './testReducer';
 
 const appReducers = combineReducers({
-    testReducer
+  testReducer,
 });
 
 const appStore = createStore(appReducers);
