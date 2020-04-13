@@ -1,8 +1,10 @@
-/* eslint-disable no-shadow */
 import React from 'react';
-import AppContainer from './src/navigation/MainNavigator';
 import {Provider} from 'react-redux';
 import appStore from './src/state/reducers/index';
+import {createAppContainer} from 'react-navigation';
+import TabNavigator from './src/navigation/MainNavigator';
+
+const AppContainer = createAppContainer(TabNavigator);
 
 const App: () => React$Node = () => {
   return (

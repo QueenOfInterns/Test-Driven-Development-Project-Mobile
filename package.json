@@ -6,8 +6,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "jest --json",
+    "checkTest": "node checkTest.js",
+    "lint": "eslint .",
+    "pods": "cd ios && pod _1.6.1_ install || echo \"Dependency issues with `npm run pods`? Try `npm run pods-update`\"",
+    "pods-update": "cd ios && pod _1.6.1_ update"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
@@ -17,6 +20,7 @@
     "pods": "^2.0.0",
     "react": "^16.11.0",
     "react-native": "0.62.0",
+    "react-native-fs": "^2.16.6",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.7.1",
     "react-native-safe-area-context": "^0.7.3",
