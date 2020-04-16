@@ -34,7 +34,7 @@ function screenPass(screen) {
 const TabNavigator = createBottomTabNavigator(
   {
     First: {
-      screen: Screen1,
+      screen: Screen2,
     },
     Second: {
       screen: Screen2,

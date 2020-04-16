@@ -10,12 +10,12 @@ export class Screen2 extends Component {
 
     this.state = {
       users: [
-        {name: 'Spongebob', id: '1'},
-        {name: 'Patrick', id: '2'},
-        {name: 'Sandy', id: '3'},
-        {name: 'Squidward', id: '4'},
-        {name: 'Mr. Krabs', id: '5'},
-        {name: 'Gary', id: '6'},
+        {name: 'Spongebob', phoneNumber: '479-387-5534'},
+        {name: 'Patrick', phoneNumber: '479-256-5344'},
+        {name: 'Sandy', phoneNumber: '367-899-7070'},
+        {name: 'Squidward', phoneNumber: '367-345-9999'},
+        {name: 'Mr. Krabs', phoneNumber: '504-214-3322'},
+        {name: 'Gary', phoneNumber: '601-405-9977'},
       ],
     };
   }
@@ -27,15 +27,15 @@ export class Screen2 extends Component {
           keyExtractor={item => item.id}
           data={this.state.users}
           renderItem={({item}) => (
-            <View>
-              <Text
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                {item.name}
-              </Text>
+            <View
+              style={{
+                justifyContent: 'center',
+                flex: 1,
+                alignItems: 'center',
+                padding: 50,
+              }}>
+              <Text style={{padding: 20, flex: 1}}>{item.name}</Text>
+              <Text>{item.phoneNumber}</Text>
             </View>
           )}
         />
