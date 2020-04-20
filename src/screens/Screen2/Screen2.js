@@ -20,24 +20,28 @@ export class Screen2 extends Component {
     };
   }
 
+  renderInfo = ({item}) => {
+    return (
+      <View
+        style={{
+          justifyContent: 'center',
+          flex: 1,
+          alignItems: 'center',
+          padding: 50,
+        }}>
+        <Text style={{padding: 20, flex: 1}}>{item.name}</Text>
+        <Text>{item.phoneNumber}</Text>
+      </View>
+    );
+  };
+
   render() {
     return (
       <View>
         <FlatList
           keyExtractor={item => item.id}
           data={this.state.users}
-          renderItem={({item}) => (
-            <View
-              style={{
-                justifyContent: 'center',
-                flex: 1,
-                alignItems: 'center',
-                padding: 50,
-              }}>
-              <Text style={{padding: 20, flex: 1}}>{item.name}</Text>
-              <Text>{item.phoneNumber}</Text>
-            </View>
-          )}
+          renderItem={this.renderInfo}
         />
       </View>
     );
