@@ -9,14 +9,16 @@
     "test": "jest --json",
     "checkTest": "node checkTest.js",
     "lint": "eslint .",
-    "pods": "cd ios && pod _1.6.1_ install || echo \"Dependency issues with `npm run pods`? Try `npm run pods-update`\""
+    "pods": "cd ios && pod _1.6.1_ install || echo \"Dependency issues with `npm run pods`? Try `npm run pods-update`\"",
+    "pods-update": "cd ios && pod _1.6.1_ update"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
     "@react-navigation/bottom-tabs": "^5.2.5",
     "@react-navigation/native": "^5.1.4",
+    "@react-navigation/stack": "^5.2.9",
     "pods": "^2.0.0",
-    "react": "16.11.0",
+    "react": "^16.11.0",
     "react-native": "0.62.0",
     "react-native-fs": "^2.16.6",
     "react-native-gesture-handler": "^1.6.1",
@@ -25,7 +27,9 @@
     "react-native-screens": "^2.4.0",
     "react-native-testing-library": "^1.13.0",
     "react-navigation": "^4.3.7",
-    "react-navigation-tabs": "^2.8.11"
+    "react-navigation-tabs": "^2.8.11",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
@@ -33,9 +37,9 @@
     "@react-native-community/eslint-config": "0.0.5",
     "babel-jest": "24.9.0",
     "eslint": "6.8.0",
-    "jest": "^24.9.0",
+    "jest": "^25.2.7",
     "metro-react-native-babel-preset": "0.58.0",
-    "react-test-renderer": "16.11.0"
+    "react-test-renderer": "^16.13.1"
   },
   "jest": {
     "preset": "react-native"
