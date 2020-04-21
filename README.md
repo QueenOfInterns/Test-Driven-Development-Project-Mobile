@@ -51,12 +51,17 @@ This tutorial was created to introduce incoming mobile interns to react-native d
         * Within the src/screens/ folder, each screen has its own folder that contains each Screen and its respective test. E.g. Screen1 contains Screen1.js and Screen1.test.js.
     * __Snapshot testing__: an easy way to check on changes in a component's output. The test renders a given component when it is first run and stores the output in a file. This output gets committed next to the code. Each time the test is run after that, the component is rendered again and the new output is compared with the version that we had previously stored.
     * __Describe statements__ and __it statements__ are used as headings to describe different sections that are being tested. __Describe__ breaks your test into sections and describes what is being tested. __It__ is used to describe what this specific section of the code is being tested for. In our Hello World test example, the __describe__ lets the programmer know that the “Hello World Screen” is being tested and the __it__ is describing what we are testing for: that the screen ‘renders correctly’. 
+
+![picture](images/Snapshot1.png)
+
 * The image above is an example of a Snapshot that is generated from the Hello World test on the first screen. Using this Snapshot, we are able to figure out what code would we need to implement that would make our Hello World test pass. Snapshots are used to test components, so we know that we need to implement our Hello World code in a component.
     * The Snapshot shows a View tag that contains a Text tag with the string “Hello World!” in it. It also contains styling which is included in the View tag. 
         * With this information, we can see that the code that we need to develop needs to be a component that has a Text tag within a View tag, like the code below.
+![picture](images/Screen1.png)
 
 ## Tips
 * To install ES Lint in VSCode:
+![picture](images/ESLint.png)
     * Open VSCode, go to the bottom icon (the four squares) in the menu on the top left. Search ESLint in the search box and click on ESLint. Click the green install button. You may have to enable it after it installs if it does not automatically enable.
 * [Integrated terminal in VSCode](https://code.visualstudio.com/docs/editor/integrated-terminal)
     * This can be used so you don’t have to have another window open to run the npm commands
