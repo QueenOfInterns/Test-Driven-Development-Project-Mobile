@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
+import MyFlatlist from '../../components/myFlatlist/MyFlatlist';
 
 export class Screen3 extends Component {
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Screen Three</Text>
+      <View>
+        <MyFlatlist />
       </View>
     );
   }

@@ -50,7 +50,7 @@ const TabNavigator = createBottomTabNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       tabBarOnPress: ({navigation, defaultHandler}) => {
         if (
-          (navigation.state.routeName === 'Second' && !screenPass(1)) ||
+          // (navigation.state.routeName === 'Second' && !screenPass(1)) ||
           (navigation.state.routeName === 'Third' && !screenPass(2)) ||
           (navigation.state.routeName === 'Fourth' && !screenPass(3))
         ) {
