@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Screeen 2 Flatlist can render with the given data 1`] = `
+<View>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "name": "Spongebob",
+          "phoneNumber": "479-387-5534",
+        },
+        Object {
+          "name": "Patrick",
+          "phoneNumber": "479-256-5344",
+        },
+        Object {
+          "name": "Sandy",
+          "phoneNumber": "367-899-7070",
+        },
+        Object {
+          "name": "Squidward",
+          "phoneNumber": "367-345-9999",
+        },
+        Object {
+          "name": "Mr. Krabs",
+          "phoneNumber": "504-214-3322",
+        },
+        Object {
+          "name": "Gary",
+          "phoneNumber": "601-405-9977",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;
+
+exports[`Screeen 2 Flatlist displays error when there is an error 1`] = `
+<View>
+  <FlatList
+    data={Array []}
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;
+
+exports[`Screeen 2 Flatlist does not crash with no data 1`] = `
+<View>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "name": "Spongebob",
+          "phoneNumber": "479-387-5534",
+        },
+        Object {
+          "name": "Patrick",
+          "phoneNumber": "479-256-5344",
+        },
+        Object {
+          "name": "Sandy",
+          "phoneNumber": "367-899-7070",
+        },
+        Object {
+          "name": "Squidward",
+          "phoneNumber": "367-345-9999",
+        },
+        Object {
+          "name": "Mr. Krabs",
+          "phoneNumber": "504-214-3322",
+        },
+        Object {
+          "name": "Gary",
+          "phoneNumber": "601-405-9977",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;
