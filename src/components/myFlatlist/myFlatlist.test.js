@@ -1,5 +1,4 @@
 import MyFlatlist from "./myFlatlist";
-
 describe('MyFlatlist', () => {
     describe('Custom Flatlist', () => {
       it('can render with the given data', () => {
