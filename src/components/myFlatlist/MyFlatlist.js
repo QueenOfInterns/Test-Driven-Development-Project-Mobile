@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { ScrollView, View, Text, StyleSheet} from 'react-native';
 
 class MyFlatlist extends Component {
-          state = {
+    constructor(props) {
+        super(props);
+    
+        if (props.data) {
+          this.state = {
             users: [
               {name: 'Spongebob', phoneNumber: '479-387-5534'},
               {name: 'Patrick', phoneNumber: '479-256-5344'},
@@ -11,8 +15,15 @@ class MyFlatlist extends Component {
               {name: 'Mr. Krabs', phoneNumber: '504-214-3322'},
               {name: 'Gary', phoneNumber: '601-405-9977'},
             ],
+            error: false,
           };
-
+        } else {
+          this.state = {
+            users: [],
+            error: true,
+          };
+        }
+      }
       render() {
         return (
           <View>
