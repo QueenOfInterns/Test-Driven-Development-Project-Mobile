@@ -9,24 +9,7 @@ describe('Screeen 2', () => {
         data: [{title: 'TestTitle', body: 'TestBody'}],
         error: false,
       };
-      const renderer = new ShallowRenderer();
-      renderer.render(<Screen2 {...props} />);
-      expect(renderer.getRenderOutput()).toMatchSnapshot();
-    });
 
-    it('does not crash with no data', () => {
-      const props = {
-        data: [],
-      };
-
-      const renderer = new ShallowRenderer();
-      renderer.render(<Screen2 {...props} />);
-      expect(renderer.getRenderOutput()).toMatchSnapshot();
-    });
-    it('displays error when there is an error', () => {
-      const props = {
-        error: true,
-      };
       const renderer = new ShallowRenderer();
       renderer.render(<Screen2 {...props} />);
       expect(renderer.getRenderOutput()).toMatchSnapshot();
