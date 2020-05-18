@@ -10,6 +10,7 @@ describe('Screen 2', () => {
         data: [{title: 'TestTitle', body: 'TestBody'}],
         error: false,
       };
+<<<<<<< HEAD
       const renderer = new ShallowRenderer();
       renderer.render(<Screen2 {...props} />);
       expect(renderer.getRenderOutput()).toMatchSnapshot();
@@ -20,15 +21,9 @@ describe('Screen 2', () => {
         data: [],
         error: false,
       };
+=======
+>>>>>>> origin/dev-colby
 
-      const renderer = new ShallowRenderer();
-      renderer.render(<Screen2 {...props} />);
-      expect(renderer.getRenderOutput()).toMatchSnapshot();
-    });
-    it('displays error when there is an error', () => {
-      const props = {
-        error: true,
-      };
       const renderer = new ShallowRenderer();
       renderer.render(<Screen2 {...props} />);
       expect(renderer.getRenderOutput()).toMatchSnapshot();
