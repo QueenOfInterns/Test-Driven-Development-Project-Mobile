@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Screeen 2 Flatlist can render with the given data 1`] = `
+exports[`Screen 2 Flatlist can render with the given data 1`] = `
 <View>
   <FlatList
     data={
@@ -47,7 +47,7 @@ exports[`Screeen 2 Flatlist can render with the given data 1`] = `
 </View>
 `;
 
-exports[`Screeen 2 Flatlist displays error when there is an error 1`] = `
+exports[`Screen 2 Flatlist displays error when there is an error 1`] = `
 <View>
   <FlatList
     data={Array []}
@@ -67,7 +67,7 @@ exports[`Screeen 2 Flatlist displays error when there is an error 1`] = `
 </View>
 `;
 
-exports[`Screeen 2 Flatlist does not crash with no data 1`] = `
+exports[`Screen 2 Flatlist does not crash with no data 1`] = `
 <View>
   <FlatList
     data={

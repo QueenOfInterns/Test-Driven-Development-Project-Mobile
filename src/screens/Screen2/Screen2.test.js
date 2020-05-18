@@ -6,7 +6,10 @@ import {Screen2} from './Screen2.js';
 describe('Screen 2', () => {
   describe('Flatlist', () => {
     it('can render with the given data', () => {
-      Screen2.propTypes = {};
+      const props = {
+        data: [{title: 'TestTitle', body: 'TestBody'}],
+        error: false,
+      };
       const renderer = new ShallowRenderer();
       renderer.render(<Screen2 {...props} />);
       expect(renderer.getRenderOutput()).toMatchSnapshot();
@@ -15,6 +18,7 @@ describe('Screen 2', () => {
     it('does not crash with no data', () => {
       const props = {
         data: [],
+        error: false,
       };
 
       const renderer = new ShallowRenderer();
