@@ -1,8 +1,9 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
+import {connect} from 'react-redux';
+import {SAVE_DATA} from '../../state/actions/actionTypes';
 
-export class Screen4 extends Component {
+class Screen4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +20,7 @@ export class Screen4 extends Component {
           isLoading: false,
           dataSource: responseJson.movies,
         });
+        this.props.apiCall(responseJson.movies);
       });
   }
   render() {
@@ -58,3 +60,22 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 });
+
+const mapStateToProps = state => {
+  return {
+    movies: state.movies,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    apiCall: data => {
+      dispatch({type: SAVE_DATA, payload: data});
+    },
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Screen4);
