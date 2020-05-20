@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyFlatlist Custom Flatlist can render with the given data 1`] = `
+<View>
+  <Text>
+    ERROR
+  </Text>
+</View>
+`;
+
+exports[`MyFlatlist Custom Flatlist displays error when there is an error 1`] = `
+<View>
+  <ScrollViewMock />
+</View>
+`;
+
+exports[`MyFlatlist Custom Flatlist does not crash with no data 1`] = `
+<View>
+  <Text>
+    ERROR
+  </Text>
+</View>
+`;

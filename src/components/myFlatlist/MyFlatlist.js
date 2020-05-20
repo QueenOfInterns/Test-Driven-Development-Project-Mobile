@@ -8,7 +8,7 @@ class MyFlatlist extends Component {
         if (props.data) {
           this.state = {
             users: props.data.users,
-            error: false,
+            error: props.error,
           };
         } else {
           this.state = {
@@ -18,21 +18,30 @@ class MyFlatlist extends Component {
         }
       }
       render() {
-        return (
-          <View>
-            <ScrollView>
-              {
-                this.state.users.map((item) => (
-                    <View key = {item.id} style = {styles.item}>
-                        <Text>{item.name}</Text>
-                        <Text>{item.phoneNumber}</Text>
-                    </View>
-                  ))
-              }
-            </ScrollView>
-          </View>
-        );
-      }
+        if(this.state.error == false) {
+            return (
+                <View>
+                    <ScrollView>
+                    {
+                        this.state.users.map((item) => (
+                        <View key = {item.id} style = {styles.item}>
+                            <Text>{item.name}</Text>
+                            <Text>{item.phoneNumber}</Text>
+                        </View>
+                        ))
+                    }
+                    </ScrollView>
+                </View>
+            );
+        }
+        else {
+            return (
+                <View>
+                    <Text>ERROR</Text>
+                </View>
+            );
+        }
+    }
 }
 
 
