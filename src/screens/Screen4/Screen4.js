@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
 import {SAVE_DATA} from '../../state/actions/actionTypes';
 
-class Screen4 extends Component {
+export class Screen4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
