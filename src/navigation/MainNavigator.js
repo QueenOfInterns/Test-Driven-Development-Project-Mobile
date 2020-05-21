@@ -3,7 +3,7 @@ import {createAppContainer} from 'react-navigation';
 import Screen1 from '../screens/Screen1/Screen1';
 import {Screen2} from '../screens/Screen2/Screen2';
 import {Screen3} from '../screens/Screen3/Screen3';
-import {Screen4} from '../screens/Screen4/Screen4';
+import Screen4 from '../screens/Screen4/Screen4';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import * as data1 from '../../output/output1.json';
 import * as data2 from '../../output/output2.json';
