@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
+import fetch from 'node-fetch';
 import {SAVE_DATA} from '../../state/actions/actionTypes';
 
 export class Screen4 extends Component {
@@ -13,16 +14,20 @@ export class Screen4 extends Component {
   }
 
   componentDidMount() {
-    return fetch('https://facebook.github.io/react-native/movies.json')
+    this.apiCall();
+  }
+
+  apiCall = () => {
+    fetch('https://facebook.github.io/react-native/movies.json')
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
           isLoading: false,
           dataSource: responseJson.movies,
         });
-        this.props.apiCall(responseJson.movies);
+        this.props.saveData(responseJson.movies);
       });
-  }
+  };
   render() {
     if (this.state.isLoading) {
       return (
@@ -69,7 +74,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    apiCall: data => {
+    saveData: data => {
       dispatch({type: SAVE_DATA, payload: data});
     },
   };

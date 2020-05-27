@@ -17,6 +17,7 @@
     "@react-navigation/bottom-tabs": "^5.2.5",
     "@react-navigation/native": "^5.1.4",
     "@react-navigation/stack": "^5.2.9",
+    "node-fetch": "^2.6.0",
     "pods": "^2.0.0",
     "react": "^16.11.0",
     "react-native": "0.62.0",
@@ -29,7 +30,8 @@
     "react-navigation": "^4.3.7",
     "react-navigation-tabs": "^2.8.11",
     "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
