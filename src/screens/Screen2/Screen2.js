@@ -7,17 +7,12 @@ import {View, Text, FlatList} from 'react-native';
 export class Screen2 extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       users: [
-        {name: 'Spongebob', phoneNumber: '479-387-5534'},
-        {name: 'Patrick', phoneNumber: '479-256-5344'},
-        {name: 'Sandy', phoneNumber: '367-899-7070'},
-        {name: 'Squidward', phoneNumber: '367-345-9999'},
-        {name: 'Mr. Krabs', phoneNumber: '504-214-3322'},
-        {name: 'Gary', phoneNumber: '601-405-9977'},
+        //add user objects
       ],
-      error: false,
+      //add error state
     };
   }
   renderInfo = ({item}) => {
@@ -29,8 +24,10 @@ export class Screen2 extends Component {
           alignItems: 'center',
           padding: 50,
         }}>
-        <Text style={{padding: 20, flex: 1}}>{item.name}</Text>
-        <Text>{item.phoneNumber}</Text>
+        {/*display the users name in the first text field and phoneNumber in the second.
+        Since item is passed in, you can access the user object by using item.[property] just like in c++ or java*/}
+        <Text style={{padding: 20, flex: 1}}>{/*name here*/}</Text>
+        <Text>{/*phoneNumber here*/}</Text>
       </View>
     );
   };
@@ -39,7 +36,9 @@ export class Screen2 extends Component {
     return (
       <View>
         <FlatList
-          keyExtractor={item => item.id}
+          //keyExtractor here
+          //data here
+          //rederItem here
           data={this.state.users}
           renderItem={this.renderInfo}
         />
