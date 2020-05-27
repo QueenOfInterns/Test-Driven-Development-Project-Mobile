@@ -11,8 +11,9 @@ class Screen1 extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Hello World!</Text>
+      // put the style in the view below
+      <View style={{}}>
+        {/*Have "Hello World! in a text component here */}
       </View>
     );
   }
