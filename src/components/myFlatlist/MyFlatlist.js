@@ -25,8 +25,8 @@ class MyFlatlist extends Component {
                     {
                         this.state.users.map((item) => (
                         <View key = {item.id} style = {styles.item}>
-                            <Text>{item.name}</Text>
-                            <Text>{item.phoneNumber}</Text>
+                            <Text>{item.title}</Text>
+                            <Text>{item.body}</Text>
                         </View>
                         ))
                     }
