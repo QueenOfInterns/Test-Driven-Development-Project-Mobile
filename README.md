@@ -62,6 +62,7 @@ This tutorial was created to introduce incoming mobile interns to react-native d
 ### Screen2:
 
 * Now that you’re more familiar with how the Test Driven Development App works, we can move onto more complicated test cases. For Screen2, we will be working with a __FlatList__ component test.
+![picture](images/Screen2Tests.png)
 * As you can see from the screenshot above, this test has multiple Describe and It statements that can give us a clue to what the code actually looks like.
    * From the second describe statement, we can tell that the unit test is testing a FlatList component, so we know we will need to implement one. You can find more information on how to implement a FlatList component here: https://reactnative.dev/docs/flatlist
 * From the first it statement, we see that the FlatList component needs to render some given data that is passed through the __props__ parameter. This means that the FlatList component will be using state to pass data from the __data prop__ to the FlatList. We can also see that there is a prop called ‘error’ that keeps track of whether or not the FlatList is reading data correctly. This case is a __“positive case”__ meaning that we are testing to see if our component does what we want it to do. 
