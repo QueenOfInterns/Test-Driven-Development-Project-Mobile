@@ -9,7 +9,6 @@ class Screen4 extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      dataSource: null,
     };
   }
 
@@ -18,15 +17,16 @@ class Screen4 extends Component {
   }
 
   apiCall = () => {
+    let data = null;
     fetch('https://facebook.github.io/react-native/movies.json')
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
           isLoading: false,
-          dataSource: responseJson.movies,
         });
+        data = responseJson;
       });
-    this.props.saveData(this.state.dataSource);
+    this.props.saveData(data);
   };
   render() {
     if (this.state.isLoading) {
@@ -36,8 +36,8 @@ class Screen4 extends Component {
         </View>
       );
     } else {
-      let movies = this.props.movies;
-      movies.map((item, key) => {
+      console.log('movies:', this.props.movies);
+      let movies = this.props.movies.map((item, key) => {
         return (
           <View key={key} style={styles.item}>
             <Text> {item.title}</Text>
@@ -67,11 +67,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  return {
-    movies: state.movies,
-  };
-};
+const mapStateToProps = state => ({
+  movies: state.mainReducer.movies,
+});
 
 const mapDispatchToProps = dispatch => {
   return {
