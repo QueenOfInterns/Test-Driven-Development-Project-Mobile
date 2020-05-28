@@ -59,6 +59,39 @@ This tutorial was created to introduce incoming mobile interns to react-native d
         * With this information, we can see that the code that we need to develop needs to be a component that has a Text tag within a View tag, like the code below.
 ![picture](images/Screen1.png)
 
+### Screen2:
+
+* Now that you’re more familiar with how the Test Driven Development App works, we can move onto more complicated test cases. For Screen2, we will be working with a __FlatList__ component test.
+* As you can see from the screenshot above, this test has multiple Describe and It statements that can give us a clue to what the code actually looks like.
+   * From the second describe statement, we can tell that the unit test is testing a FlatList component, so we know we will need to implement one. You can find more information on how to implement a FlatList component here: https://reactnative.dev/docs/flatlist
+* From the first it statement, we see that the FlatList component needs to render some given data that is passed through the __props__ parameter. This means that the FlatList component will be using state to pass data from the __data prop__ to the FlatList. We can also see that there is a prop called ‘error’ that keeps track of whether or not the FlatList is reading data correctly. This case is a __“positive case”__ meaning that we are testing to see if our component does what we want it to do. 
+   * The link above also has information about props and how to pass data in a FlatList.
+   * Here is a link that will help you get a better understanding of what state is and how to you use it: https://reactnative.dev/docs/state#__docusaurus
+* The second it statement is a __“negative case”__, meaning we are testing whether the component does what we don’t want it to do. In this case, we are testing to see if the app crashes when it doesn’t receive any data from the __data prop__.
+* In the final it statement, we are testing to see if our component displays an error message when there is an error. This means that we are testing whether or not our __error prop__ works correctly.
+* All of these tests use Snapshot testing (like in Screen1)
+   * You can find the snapshots here : /Test-Driven-Development-Project-Mobile/src/screens/Screen2/__snapshots__/Screen2.test.js.snap
+#### Helpful Steps:
+1. Make a state called “users” and pass in an array of these objects:
+   ```
+   {name: 'Spongebob', phoneNumber: '479-387-5534'},
+   {name: 'Patrick', phoneNumber: '479-256-5344'},
+   {name: 'Sandy', phoneNumber: '367-899-7070'},
+   {name: 'Squidward', phoneNumber: '367-345-9999'},
+   {name: 'Mr. Krabs', phoneNumber: '504-214-3322'},
+   {name: 'Gary', phoneNumber: '601-405-9977'},
+
+   ```
+2. Add an “error” state and assign it to false initially
+3. After you read about Flatlist, use the FlatList properties to display the data. You assign values to properties like this `prop={object}`
+   * A flatlist should have a key extractor, this gives each item an identifier. Your key extractor should look like this `keyExtractor={item => item.id}`
+   *	The data property of the flatlist should be what you put as users in your state. You can access state by `this.state.users`
+   *	Finally, the renderItem prop item is passed the object that will be rendered with each item in the data. Set this equal to `this.renderInfo`. We will create the object in the renderInfo function
+4.	Go to the renderInfo function and display the item’s name and phone number in text fields
+5. Once you are done, make sure to check if the tests pass!
+
+
+
 ## Tips
 * To install ES Lint in VSCode:
 ![picture](images/ESLint.png)
