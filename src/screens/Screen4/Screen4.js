@@ -13,6 +13,7 @@ class Screen4 extends Component {
   }
 
   componentDidMount() {
+    this.state.isLoading = true;
     this.apiCall();
   }
 
@@ -24,11 +25,12 @@ class Screen4 extends Component {
         this.setState({
           isLoading: false,
         });
-        data = responseJson;
+        data = responseJson.movies;
       });
     this.props.saveData(data);
   };
   render() {
+    console.log("isloading: ", this.state.isLoading);
     if (this.state.isLoading) {
       return (
         <View>
@@ -36,7 +38,6 @@ class Screen4 extends Component {
         </View>
       );
     } else {
-      console.log('movies:', this.props.movies);
       let movies = this.props.movies.map((item, key) => {
         return (
           <View key={key} style={styles.item}>
