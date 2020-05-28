@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import fetch from 'node-fetch';
 import {SAVE_DATA} from '../../state/actions/actionTypes';
 
-export class Screen4 extends Component {
+class Screen4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,8 +25,8 @@ export class Screen4 extends Component {
           isLoading: false,
           dataSource: responseJson.movies,
         });
-        this.props.saveData(responseJson.movies);
       });
+    this.props.saveData(this.state.dataSource);
   };
   render() {
     if (this.state.isLoading) {
@@ -36,7 +36,8 @@ export class Screen4 extends Component {
         </View>
       );
     } else {
-      let movies = this.state.dataSource.map((item, key) => {
+      let movies = this.props.movies;
+      movies.map((item, key) => {
         return (
           <View key={key} style={styles.item}>
             <Text> {item.title}</Text>
