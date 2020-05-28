@@ -4,28 +4,29 @@ import {connect} from 'react-redux';
 import fetch from 'node-fetch';
 import {SAVE_DATA} from '../../state/actions/actionTypes';
 
-export class Screen4 extends Component {
+class Screen4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      dataSource: null,
     };
   }
 
   componentDidMount() {
+    this.state.isLoading = true;
     this.apiCall();
   }
 
   apiCall = () => {
+    var data = [];
     fetch('https://facebook.github.io/react-native/movies.json')
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
           isLoading: false,
-          dataSource: responseJson.movies,
         });
-        this.props.saveData(responseJson.movies);
+        data = responseJson.movies;
+        this.props.saveData(data);
       });
   };
   render() {
@@ -36,7 +37,7 @@ export class Screen4 extends Component {
         </View>
       );
     } else {
-      let movies = this.state.dataSource.map((item, key) => {
+      let movies = this.props.movies.map((item, key) => {
         return (
           <View key={key} style={styles.item}>
             <Text> {item.title}</Text>
@@ -66,11 +67,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  return {
-    movies: state.movies,
-  };
-};
+const mapStateToProps = state => ({
+  movies: state.mainReducer.movies,
+});
 
 const mapDispatchToProps = dispatch => {
   return {
