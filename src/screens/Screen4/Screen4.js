@@ -18,7 +18,7 @@ class Screen4 extends Component {
   }
 
   apiCall = () => {
-    let data = null;
+    var data = [];
     fetch('https://facebook.github.io/react-native/movies.json')
       .then(response => response.json())
       .then(responseJson => {
@@ -26,11 +26,10 @@ class Screen4 extends Component {
           isLoading: false,
         });
         data = responseJson.movies;
+        this.props.saveData(data);
       });
-    this.props.saveData(data);
   };
   render() {
-    console.log("isloading: ", this.state.isLoading);
     if (this.state.isLoading) {
       return (
         <View>
