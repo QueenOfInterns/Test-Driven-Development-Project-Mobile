@@ -8,7 +8,7 @@ class MyFlatlist extends Component {
         if (props.data) {
           this.state = {
             users: props.data.users,
-            error: props.error,
+            error: false,
           };
         } else {
           this.state = {

@@ -13,6 +13,7 @@ export class Screen3 extends Component {
       {title: 'Mr. Krabs', body: '504-214-3322'},
       {title: 'Gary', body: '601-405-9977'},
     ],
+    error: false,
   };
   render() {
     return (
