@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
 import fetch from 'node-fetch';
 import {SAVE_DATA} from '../../state/actions/actionTypes';
+import MyFlatlist from '../../components/myFlatlist/MyFlatlist';
 
 class Screen4 extends Component {
   constructor(props) {
@@ -26,6 +27,11 @@ class Screen4 extends Component {
           isLoading: false,
         });
         data = responseJson.movies;
+        //change releaseYear field to body
+        data.map(item => {
+          item.body = item.releaseYear;
+          delete item.releaseYear;
+        });
         this.props.saveData(data);
       });
   };
@@ -37,35 +43,14 @@ class Screen4 extends Component {
         </View>
       );
     } else {
-      let movies = this.props.movies.map((item, key) => {
-        return (
-          <View key={key} style={styles.item}>
-            <Text> {item.title}</Text>
-            <Text> {item.releaseYear}</Text>
-          </View>
-        );
-      });
-      return <View style={styles.container}>{movies}</View>;
+      return (
+        <View>
+          <MyFlatlist data={this.props.movies} />
+        </View>
+      );
     }
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  item: {
-    flex: 1,
-    justifyContent: 'center',
-    alignSelf: 'stretch',
-    margin: 10,
-    alignItems: 'center',
-    borderBottomColor: '#eee',
-    borderBottomWidth: 1,
-  },
-});
 
 const mapStateToProps = state => ({
   movies: state.mainReducer.movies,
