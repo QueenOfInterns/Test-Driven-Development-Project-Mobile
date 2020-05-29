@@ -91,7 +91,71 @@ This tutorial was created to introduce incoming mobile interns to react-native d
 4.	Go to the renderInfo function and display the item’s name and phone number in text fields
 5. Once you are done, make sure to check if the tests pass!
 
+### Screen3:
+* After becoming familiar with using a component, we will now move on to creating our own custom component to fulfill the same purpose.
+* If you navigate to the components folder, you will see a “MyFlatlist” component that needs to be completed.
+* This component receives props and displays them in a list form similar to the FlatList used earlier, so our first step will be to set some local state equal to the received props. For example, if we receive props.data, and want to set titles, we would type `titles = props.data.titles`. 
+* After setting up the state, next is to fill in the map used to create a list of views that contain the title and body of each data entry. A Map is a functional variation of a loop, and fulfills the same purpose of a for loop, while loop, etc. in a much more concise manor.  
+* For our map, we set a variable name that will be used as a temporary variable storing each object per iteration of the map. After picking a name, we have to declare some important information. 
+* First, we need to acquire the key of the temporary variable, so we can use it within the view, which is denoted by `key = <variable>.id` 
+* We then set the styling for each view, followed by setting the text fields to the corresponding temporary variable data, such as `<variable>.title`. 
+* We then move to the actual Screen3 component to implement our custom list. All that needs to be done is to declare the MyFlatlist component similar to how the FlatList was declared, and pass in the props within the tag, usually looking like `data = <props we want to send>`
 
+### Screen4:
+* In this screen, we will use the MyFlatlist component you created in the last screen. Instead of hard coding the state, you will use the fetch API on a link with a list of movies and store those list of movies in state. As shown below 
+[Screenshot of what it is supposed to look like] 
+* (To read about Redux, go here: https://redux.js.org/introduction/getting-started) 
+1. First you should create a Redux action that stores data into the global state. 
+   1) Go to Test-Driven-Development-Project-Mobile/src/state/actions/actionTypes.js 
+   2) Notice that we have an actionType called SAVE_DATA and we import that into our Screen4 
+   3) Now go to Test-Driven-Development-Project-Mobile/src/state/reducers/mainReducer.js 
+   4) We import our action types here and use a switch statement on the action types to determine what to do with the payload of the action. This is where the logic takes place. 
+   5) The SAVE_DATA action type stores the payload that comes with the action to a state called movies 
+   6) With all of this set up, you can write your action directly in the file. (In some cases, you can write your action in the actions folder and import it into your component) 
+   7) Go to the mapDispatchToProps fucntion. MapDispatchToProps returns a list of actions. Your save data action should look as shown below 
+
+   ``` 
+   saveData: data => { 
+   dispatch({type: SAVE_DATA, payload: data}); 
+   }, 
+   ``` 
+   8) This action takes one input with the type SAVE_DATA. Our main reducer handles the logic for what to do with this data. 
+
+2. Now you need to have a way to access this data 
+   1) This takes place in the mapStateToProps function 
+   2) This function returns a list of properties and how to access them formatted as `propName: state.pathToLocation` 
+   3) Call your property name `movies` 
+   4) Usually the path is as simple as `state.movies`, but because ours is set up differently, and we have a main reducer, the path is `state.mainReducer.movies` 
+   5) Once you map the state to the prop, you will be able to access that prop by `this.props.propName` 
+3. Next, you’ll make the function that will retrieve and store our data. We called this apiCall 
+   1) This is the page you will be fetching from: https://facebook.github.io/react-native/movies.json 
+   2) Learn about fetch here: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch 
+      * This is the javascript fetch, and we use fetch from node-fetch, but they work the same 
+4) When you use fetch, it retrieves everything from that page, so you will receive the whole JSON object. You only need the movies from that object, so make a variable `data = responseJson.movies;` 
+   * Now you have an array of objects that looks like this 
+   ```
+   [ { "id": "1", "title": "Star Wars", "releaseYear": "1977" }, 
+   { "id": "2", "title": "Back to the Future", "releaseYear": "1985" }, 
+   { "id": "3", "title": "The Matrix", "releaseYear": "1999" }, 
+   { "id": "4", "title": "Inception", "releaseYear": "2010" }, 
+   { "id": "5", "title": "Interstellar", "releaseYear": "2014" } ]
+   ```
+5. For your MyFlatList component, you want a title and a body, you already have a title, and you want to use the releaseYear as the body. Use the map function, a for loop, or a while loop on data to call the following commands on each item 
+   ``` 
+   item.body = item.releaseYear; 
+   delete item.releaseYear; 
+   ``` 
+   * These commands make a new key called body, set it to releaseYear, and delete the releaseYear 
+6. Now that you have the data in the correct format, you can use your saveData function with the data. To access functions from mapDispatchToProps, call it using this.props.functionName(); 
+7. Once you have stored your data, you need to use setState so that isLoading is false 
+   * Read here about setState https://reactjs.org/docs/react-component.html#setstate 
+   * Use the form ` this.setState({quantity: 2})` 
+8. Call this apiCall in the componentDidMount function so that every time the component reloads, it attempts to call the API 
+9. Now to work on rendering the page 
+   1) You don’t want your users to get a big error everytime your api can’t call, so if this.state.isLoading is true, you should return something. Looking at the snapshots, the tests want you to return an ActivityIndicator inside of a View. 
+      * The ActivityIndicator looks like it has props in the snapshot, but those are just it’s defaults, so you can just call `<ActivityIndicator/>`
+   2) If this.state.isLoading is false, then our apiCall succeeded, and you should display MyFlatlist inside of a view with the data being this.props.movies 
+10. After you finish these steps, run the app and the tests to see if it works! 
 
 ## Tips
 * To install ES Lint in VSCode:
